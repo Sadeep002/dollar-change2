@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dollar Exchange Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💵 Dollar Exchange Calculator</h1>
+            <button id="settings-btn" class="settings-btn" title="Settings">
+                <i class="fas fa-cog"></i>
+            </button>
+        </header>
+
+        <main>
+            <!-- Bill Counter Section -->
+            <section class="bill-counter">
+                <h2>Bill Counter</h2>
+                <div class="bill-grid">
+                    <div class="bill-input">
+                        <label for="bill-100">$100 Bills:</label>
+                        <input type="number" id="bill-100" min="0" value="0" class="bill-field">
+                    </div>
+                    <div class="bill-input">
+                        <label for="bill-50">$50 Bills:</label>
+                        <input type="number" id="bill-50" min="0" value="0" class="bill-field">
+                    </div>
+                    <div class="bill-input">
+                        <label for="bill-20">$20 Bills:</label>
+                        <input type="number" id="bill-20" min="0" value="0" class="bill-field">
+                    </div>
+                    <div class="bill-input">
+                        <label for="bill-10">$10 Bills:</label>
+                        <input type="number" id="bill-10" min="0" value="0" class="bill-field">
+                    </div>
+                    <div class="bill-input">
+                        <label for="bill-5">$5 Bills:</label>
+                        <input type="number" id="bill-5" min="0" value="0" class="bill-field">
+                    </div>
+                    <div class="bill-input">
+                        <label for="bill-2">$2 Bills:</label>
+                        <input type="number" id="bill-2" min="0" value="0" class="bill-field">
+                    </div>
+                    <div class="bill-input">
+                        <label for="bill-1">$1 Bills:</label>
+                        <input type="number" id="bill-1" min="0" value="0" class="bill-field">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section class="results">
+                <button id="calculate-btn" class="calculate-button">Calculate Exchange Value</button>
+                <div class="result-display">
+                    <h3>Exchange Summary</h3>
+                    <div id="breakdown" class="breakdown"></div>
+                    <div class="total-result">
+                        <span>Total Exchange Value: </span>
+                        <span id="total-value" class="total-amount">Rs 0.00</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="settings-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>⚙️ Exchange Rate Settings</h2>
+                <span class="close-btn" id="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="settings-grid">
+                    <div class="setting-input">
+                        <label for="rate-100">$100 Bill Rate (Base):</label>
+                        <div class="input-wrapper">
+                            <input type="number" id="rate-100" step="0.01" value="100.00" class="rate-field">
+                            <span class="currency-symbol">Rs</span>
+                        </div>
+                    </div>
+                    <div class="setting-input">
+                        <label for="deduction-50">$50 Bill Deduction:</label>
+                        <div class="input-wrapper">
+                            <input type="number" id="deduction-50" step="0.01" value="0.00" class="rate-field">
+                            <span class="currency-symbol">Rs</span>
+                        </div>
+                    </div>
+                    <div class="setting-input">
+                        <label for="deduction-20">$20 Bill Deduction:</label>
+                        <div class="input-wrapper">
+                            <input type="number" id="deduction-20" step="0.01" value="0.00" class="rate-field">
+                            <span class="currency-symbol">Rs</span>
+                        </div>
+                    </div>
+                    <div class="setting-input">
+                        <label for="deduction-10">$10 Bill Deduction:</label>
+                        <div class="input-wrapper">
+                            <input type="number" id="deduction-10" step="0.01" value="0.00" class="rate-field">
+                            <span class="currency-symbol">Rs</span>
+                        </div>
+                    </div>
+                    <div class="setting-input">
+                        <label for="deduction-5">$5 Bill Deduction:</label>
+                        <div class="input-wrapper">
+                            <input type="number" id="deduction-5" step="0.01" value="0.00" class="rate-field">
+                            <span class="currency-symbol">Rs</span>
+                        </div>
+                    </div>
+                    <div class="setting-input">
+                        <label for="deduction-2">$2 Bill Deduction:</label>
+                        <div class="input-wrapper">
+                            <input type="number" id="deduction-2" step="0.01" value="0.00" class="rate-field">
+                            <span class="currency-symbol">Rs</span>
+                        </div>
+                    </div>
+                    <div class="setting-input">
+                        <label for="deduction-1">$1 Bill Deduction:</label>
+                        <div class="input-wrapper">
+                            <input type="number" id="deduction-1" step="0.01" value="0.00" class="rate-field">
+                            <span class="currency-symbol">Rs</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-actions">
+                    <button id="save-settings" class="save-btn">Save Settings</button>
+                    <button id="reset-settings" class="reset-btn">Reset to Default</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
